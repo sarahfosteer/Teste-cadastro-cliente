@@ -1,0 +1,80 @@
+<form class="card" [formGroup]="formulario" (ngSubmit)="salvar()" #form="ngForm">
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <div class="form-group form-row">
+                    <label for="cpf">CPF/CNPJ</label>
+                    <input required type="text" class="form-control" formControlName="cpf">
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="form-group form-row">
+                    <label for="nome">Nome/Razão Social</label>
+                    <input type="text" class="form-control" formControlName="nome">
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="form-group form-row">
+                    <label for="nomeFantasia">Nome Fantasia</label>
+                    <input type="text" class="form-control" formControlName="nomeFantasia">
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="form-group form-row">
+                    <label for="cep">CEP</label>
+                    <input type="text" class="form-control" formControlName="cep">
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="form-group form-row">
+                    <label for="endereco">Endereço</label>
+                    <input type="text" class="form-control" formControlName="endereco">
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="form-group form-row">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" class="form-control" formControlName="bairro">
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="form-group form-row">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" class="form-control" formControlName="cidade">
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="form-group form-row">
+                    <label for="fone">Telefone</label>
+                    <input type="text" class="form-control" formControlName="fone">
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="form-group form-row">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" formControlName="email">
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </div>
+</form>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Endereço</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of clientes">
+        <td>{{cliente.cpf}}</td>
+        <td>{{cliente.nome}}</td>
+        <td>{{cliente.endereco}}</td>
+        <td>{{cliente.email}}</td>
+      </tr>
+    </tbody>
+  </table>
